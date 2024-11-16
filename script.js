@@ -21,10 +21,8 @@ function pullOut() {
 			ease: Circ.easeInOut,
 		})
 		.set('.mask', {
-			//- Change overflow on mask
 			overflow: 'visible',
 			onComplete: function() {
-				//- Change Z-Index on Pseudo element
 				envelope.toggleClass('is-open');
 			}
 		})
@@ -38,10 +36,13 @@ function pullOut() {
 			ease: Circ.easeInOut,
 		}, 'moveDown')
 		.to('button', 1, {
-			y: '180px',
+			y: '180px', // Adjust this value as needed
 			ease: Circ.easeInOut,
 			onComplete: toggleText
-		}, 'moveDown+=0.15');
+		}, 'moveDown+=0.15')
+		.set(button, { // Change the top position after the animation
+			top: '97px' // Set this to your desired value
+		});
 }
 
 function toggleFlip() {
